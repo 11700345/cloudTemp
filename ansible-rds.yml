@@ -1,0 +1,23 @@
+- hosts: databases
+  vars:
+  aws_rds                    :
+    - security_group_id      : "T O D O"
+      publicly_accessible    : true
+      db_engine              : "mysql"
+      db_name                : "testdb"
+      instance_name          : "T O D O"
+      engine_version         : "5.7"
+      size                   : "20"
+      storage_type           : "gp2"
+      instance_type          : "db.t2.micro"
+      command                : "create"
+      username               : "cloudandautomation"
+      password               : "worksButNotSecureXD"
+      skip_final_snapshot    : true
+      db_parameter_group_name: "default.mysql5.7"
+      vpc_security_group_ids : "T O D O"
+      db_subnet_group_name   : "T O D O"
+
+
+  roles:
+     - { role: ansible-aws-rds }
